@@ -1,0 +1,71 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"AudioRecorder\"><param name=\"android-package\" value=\"info.newforestcicada.audiorecorder.plugin.RecorderPlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "res/values/strings.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<string name=\"MEANS\">distribution_means</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<string name=\"VARS\">distribution_variances</string>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "info.newforestcicada.recorder"
+        },
+        "info.newforestcicada.audiorecorder": {
+            "PACKAGE_NAME": "info.newforestcicada.recorder"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "info.newforestcicada.audiorecorder.audioRecorder",
+            "file": "plugins/info.newforestcicada.audiorecorder/www/audioRecorder-plugin.js",
+            "pluginId": "info.newforestcicada.audiorecorder",
+            "clobbers": [
+                "audioRecorder"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-console": "1.0.1-dev",
+        "info.newforestcicada.audiorecorder": "0.1.0"
+    }
+}

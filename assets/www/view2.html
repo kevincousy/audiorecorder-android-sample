@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>AudioRecorder</title>
+    </head>
+    <body>
+        <div class="app">
+            <p>
+                <canvas id='dynamic_sonogram' width='300px' height='80px'></canvas>&nbsp;
+            </p>
+            <p>
+                <canvas id='amplitude' width='300px' height='20px'></canvas>
+            </p>
+            <p>
+                <a href='#' class='btn' onClick='audioRecorder.startAudioRecorder();'>Start AudioRecorder</a>&nbsp;
+                <a href='#' class='btn' onClick='audioRecorder.stopAudioRecorder();'>Stop AudioRecorder</a>
+            </p>
+            <p>
+                <a href='#' class='btn' onClick='audioRecorder.startWhiteNoise();'>White Noise</a>&nbsp;
+                <a href='#' class='btn' onClick='audioRecorder.startHeterodyne();'>Heterodyne</a>&nbsp;
+                <a href='#' class='btn' onClick='audioRecorder.stopWhiteNoise();'>Silent</a>
+            </p>
+            <span id='frequency'>15000</span>
+            <p>
+                <a href='#' class='btn' onClick='app.updateFrequency(-1000);'>Dec Frequency</a>&nbsp;
+                <a href='#' class='btn' onClick='app.updateFrequency(1000);'>Inc Frequency</a>
+            </p>
+            <span id='timer'>10.0</span>
+            <p>
+                <a href='#' class='btn' onClick='app.startRecording();'>Start Recording</a>&nbsp;
+                <a href='#' class='btn' onClick='app.cancelRecording();'>Cancel Recording</a>
+            <p>
+            <span id='filename'>---</span>
+            <p>
+                <canvas id='sonogram' width='300px' height='80px'></canvas>
+            </p>
+            <p>
+                <a href='index.html' class='btn'>BACK</a>
+            <p>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/view2.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('deviceready', app.initialize, false);
+        </script>
+    </body>
+</html>
